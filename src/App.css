@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+ 
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4rem;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-color: #b8c6db;
+  background-image: linear-gradient(0deg, #444444 0%, #011b42 74%);
+  opacity: 0.5;
+  transition: opacity 1s ease-in-out;
+}
+
+.loading-screen--hidden {
+  animation: fade-out 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-screen__title {
+
+  font-size: 4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  opacity: 50%;
+}
+
+.progress__container {
+  width: 100%;
+  height: 1rem;
+  background-color: rgba(255, 255, 255, 0.42);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  opacity: 40%;
+}
+
+.progress__bar {
+  width: 0;
+  height: 100%;
+  background-color: #84d2ff;
+  transition: width 0.5s ease-in-out;
+  opacity: 70%;
+}
